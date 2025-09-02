@@ -10,6 +10,8 @@ static const char *const TAG = "sim800l";
 const char ASCII_CR = 0x0D;
 const char ASCII_LF = 0x0A;
 
+test
+
 void Sim800LComponent::update() {
   if (this->watch_dog_++ == 2) {
     this->state_ = STATE_INIT;
