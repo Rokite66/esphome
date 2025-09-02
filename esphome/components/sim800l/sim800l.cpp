@@ -324,6 +324,7 @@ void Sim800LComponent::parse_cmd_(std::string message) {
         this->sms_received_callback_.call(this->message_, this->sender_);
         this->state_ = STATE_RECEIVED_SMS;
       } else {
+        ESP_LOGD(TAG, "Received SMS");
         if (this->message_.length() > 0)
           this->message_ += "\n";
         this->message_ += message;
