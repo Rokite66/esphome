@@ -242,7 +242,7 @@ void Sim800LComponent::parse_cmd_(std::string message) {
       break;
     case STATE_PARSE_SMS_RESPONSE:
       ESP_LOGV(TAG, "P: %s - %d", message.c_str(), this->parse_index_);
-      if (message.compare(0, 6, "+CMGL:") == 0 && this->parse_index_ == 0) {
+      ifp (message.compare(0, 6, "+CMGL:") == 0 && this->parse_index_ == 0) {
         size_t start = 7;
         size_t end = message.find(',', start);
         uint8_t item = 0;
